@@ -11,7 +11,7 @@ if not mp4_files:
     exit()
 
 # 목록 보여주기
-print("🎞 변환할 .mp4 파일을 선택하세요:")
+print("변환할 .mp4 파일을 선택하세요:")
 for i, file in enumerate(mp4_files):
     print(f"{i + 1}. {file}")
 
@@ -45,7 +45,7 @@ print("🧠 Whisper 모델 로딩 중 (GPU)...")
 model = whisper.load_model("medium", device="cuda")
 
 # 3. 음성 인식 (Whisper GPU + fp16)
-print("🎧 음성 텍스트화 진행 중(세그먼트 출력 중)...")
+print("🎧 음성 텍스트화 진행 중...")
 result = model.transcribe(output_audio, language="ko", fp16=True)
 
 # 세그먼트별로 출력
